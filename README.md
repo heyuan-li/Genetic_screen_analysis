@@ -15,14 +15,6 @@ This is a replication analysis of published shRNA screens (E. Robert McDonald II
 This implementation replicates RSA scores with R = 0.97 in a selected ~30 genes subset. Further quality controls are required for comprehensive comparison. To quality control for specific genes, simply download RSA scores from the web portal: https://oncologynibr.shinyapps.io/drive/
 
 
-## 2. Analysis pipeline for CRISPR/RNAi screens.
+## 2. Analysis pipeline for CRISPR/RNAi screens (to be updated).
 
 This pipeline is able quantify shRNA/sgRNA abundances from next generation sequencing. The pipeline is scalable for genome-wide or customized shRNA/sgRNA libraries from the beginning (alignment) until count-matrix. The analysis after count-matrix illustrated here are only for customized/targeted sgRNA libraries.
-
-**Input**: FASTQ files (sequencing results of the amplicon libraries)
-
-**Method**: Pipeline adopted from Dr. Nicholas J. Neill at Westbrook lab BCM. Briefly, the reads from the FASTQ files are first trimmed by Cutadapt (Martin, 2011) to remove adaptor sequences. The trimmed reads are then aligned to the sgRNA/shRNA reference library using Bowtie 2 (Langmead and Salzberg, 2012) in end-to-end mode. The number of mapped reads to each shRNA/sgRNA in each sample is extracted from the SAM files.
-
-**Output**: count matirx for each shRNA/sgRNA
-
-An example downstream analysis after count matrix will be included in the near future (using R, only for customized/targeted sgRNA libraries).
